@@ -1,13 +1,7 @@
 function removeShortsSectionsAll() {
     const sections = document.querySelectorAll("[is-shorts]");
     sections.forEach((section) => {
-        if (
-            section &&
-            section.parentElement &&
-            section.parentElement.parentElement
-        ) {
-            section.parentElement.parentElement.remove();
-        }
+        section.parentElement.parentElement.remove();
     });
 }
 
@@ -17,28 +11,22 @@ function removeShortsSectionsNoSubscriptions() {
     }
 }
 
-let removeSections = true;
-let removeSectionsOnSubscriptions = true;
+chrome.storage.sync.get(
+    ["shortsSections", "shortsSectionsOnSubscriptions"],
+    (result) => {
+        if (!result.shortsSections) return;
 
-function initializeShortsSectionsRemovments() {
-    if (!removeSections) return;
+        const removeShortsSections = result.shortsSectionsOnSubscriptions
+            ? removeShortsSectionsAll
+            : removeShortsSectionsNoSubscriptions;
 
-    const removeShortsSections = removeSectionsOnSubscriptions
-        ? removeShortsSectionsAll
-        : removeShortsSectionsNoSubscriptions;
-
-    removeShortsSections();
-
-    const observer = new MutationObserver((mutations) => {
         removeShortsSections();
-    });
 
-    const config = { childList: true, subtree: true };
-    observer.observe(document.body, config);
-}
+        const observer = new MutationObserver(() => {
+            removeShortsSections();
+        });
 
-function main() {
-    initializeShortsSectionsRemovments();
-}
-
-window.addEventListener("load", main);
+        const config = { childList: true, subtree: true };
+        observer.observe(document.body, config);
+    }
+);

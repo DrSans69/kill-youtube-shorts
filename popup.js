@@ -35,8 +35,8 @@ document.addEventListener("DOMContentLoaded", () => {
         [
             "shortsSections",
             "shortsSectionsOnSubscriptions",
-            "shortsSections",
-            "toggleRedirectShorts",
+            "shortsButton",
+            "redirectShorts",
         ],
         (result) => {
             toggleRemoveShortsSections.checked = result.shortsSections ?? true;

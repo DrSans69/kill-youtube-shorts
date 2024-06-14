@@ -5,14 +5,15 @@ function removeShortsButton() {
     }
 }
 
-window.addEventListener("load", function () {
+chrome.storage.sync.get("shortsButton", (result) => {
+    if (!result.shortsButton) return;
+
     removeShortsButton();
 
-    const observer = new MutationObserver((mutations) => {
+    const observer = new MutationObserver(() => {
         removeShortsButton();
     });
 
     const config = { childList: true, subtree: true };
-
     observer.observe(document.body, config);
 });
