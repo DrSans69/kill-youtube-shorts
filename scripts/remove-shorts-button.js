@@ -1,4 +1,4 @@
-function removeShortsParent() {
+function removeShortsButton() {
     const shortsLink = document.querySelector('a[title="YouTube Shorts"]');
     if (shortsLink && shortsLink.parentElement) {
         shortsLink.parentElement.remove();
@@ -6,10 +6,10 @@ function removeShortsParent() {
 }
 
 window.addEventListener("load", function () {
-    removeShortsParent();
+    removeShortsButton();
 
     const observer = new MutationObserver((mutations) => {
-        removeShortsParent();
+        removeShortsButton();
     });
 
     const config = { childList: true, subtree: true };

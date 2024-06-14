@@ -29,6 +29,7 @@
         {
             "js": [
                 "scripts/remove-shorts-button.js",
+                "scripts/remove-shorts-sections.js",
                 "scripts/redirect-shorts.js"
             ],
             "matches": [
