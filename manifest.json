@@ -1,0 +1,40 @@
+{
+    "manifest_version": 3,
+    "name": "Kill YouTube Shorts",
+    "version": "1.0",
+    
+    "description": "Kill YouTube Shorts",
+    "permissions": [
+        "activeTab",
+        "webNavigation",
+        "tabs"
+    ],
+
+    "action": {
+        "default_popup": "popup.html",
+        "default_icon": "icons/128.png"
+    },
+    "icons": {
+        "16": "icons/16.png",
+        "32": "icons/32.png",
+        "48": "icons/48.png",
+        "128": "icons/128.png"
+    },
+
+    "background": {
+        "service_worker": "background.js"
+    },
+
+    "content_scripts": [
+        {
+            "js": [
+                "scripts/remove-shorts-button.js",
+                "scripts/redirect-shorts.js"
+            ],
+            "matches": [
+                "https://www.youtube.com/*"
+            ]
+        }
+      ]
+  }
+  
