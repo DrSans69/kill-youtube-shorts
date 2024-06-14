@@ -1,9 +1,31 @@
+<!DOCTYPE html>
 <html lang="en">
     <head>
-        <link rel="stylesheet" href="style.css" />
+        <meta charset="UTF-8" />
+        <title>Toggle YouTube Shorts</title>
         <link rel="stylesheet" href="popup.css" />
     </head>
     <body>
-        <div>Nothing here yet</div>
+        <h2>Kill Shorts!</h2>
+        <label>
+            <input type="checkbox" id="toggleRemoveShortsSections" />
+            Remove Shorts Sections
+        </label>
+        <label>
+            <input
+                type="checkbox"
+                id="toggleRemoveShortsSectionsOnSubscriptions"
+            />
+            Also Remove on Subscriptions page
+        </label>
+        <label>
+            <input type="checkbox" id="toggleRemoveShortsButton" />
+            Remove Shorts Button
+        </label>
+        <label>
+            <input type="checkbox" id="toggleRedirectShorts" />
+            Redirect Shorts As Normal Video
+        </label>
+        <script src="popup.js"></script>
     </body>
 </html>

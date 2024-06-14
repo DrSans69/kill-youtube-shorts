@@ -1,9 +1,18 @@
 body {
-    width: 10em;
-    height: 10em;
-    font-size: 2em;
+    width: 25em;
+    /* height: 20em; */
+    font-size: 1em;
+    font-family: Menlo, monospace;
+    padding: 1.5em 1em;
+    background-color: #1E1D1E ;
+    color: #FFFFFF;
 }
-div {
-    margin: 0 auto;
-    text-align: center;
+h2 {
+    margin: 0 0 0.5em 0;
+    color: #E0383E;
+}
+
+label {
+    display: block;
+    margin-bottom: 10px;
 }

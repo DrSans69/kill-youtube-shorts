@@ -6,8 +6,7 @@
     "description": "Kill YouTube Shorts",
     "permissions": [
         "activeTab",
-        "webNavigation",
-        "tabs"
+        "storage"
     ],
 
     "action": {
