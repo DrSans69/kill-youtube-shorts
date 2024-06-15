@@ -1,6 +1,6 @@
 {
     "manifest_version": 3,
-    "name": "Kill YouTube Shorts",
+    "name": "__MSG_extName__",
     "version": "1.0",
     
     "description": "Kill YouTube Shorts",
@@ -8,6 +8,8 @@
         "activeTab",
         "storage"
     ],
+
+    "default_locale": "uk",
 
     "action": {
         "default_popup": "popup.html",

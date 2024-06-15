@@ -1,0 +1,30 @@
+{
+    "extName": {
+        "message": "Kill Youtube Shorts",
+        "description": "Extension name."
+    },
+    "popupTitle": {
+        "message": "Kill Shorts!",
+        "description": ""
+    },
+    "toggleRemoveShortsSections": {
+        "message": "Remove Shorts Sections",
+        "description": ""
+    },
+    "toggleSectionsOnSubscriptions": {
+        "message": "Also Remove on Subscriptions page",
+        "desctiption": ""
+    },
+    "toggleRemoveShortsButton": {
+        "message": "Remove Shorts Button",
+        "desctiption": ""
+    },
+    "toggleRedirectShorts": {
+        "message": "Show Shorts As Normal Video",
+        "desctiption": ""
+    },
+    "hint": {
+        "message": "to apply changes simply refresh the page",
+        "description": ""
+    }
+}

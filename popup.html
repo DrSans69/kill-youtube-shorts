@@ -6,27 +6,24 @@
         <link rel="stylesheet" href="popup.css" />
     </head>
     <body>
-        <h2>Kill Shorts!</h2>
+        <h2 id="title"></h2>
         <label>
             <input type="checkbox" id="toggleRemoveShortsSections" />
-            Remove Shorts Sections
+            <span></span>
         </label>
         <label>
-            <input
-                type="checkbox"
-                id="toggleRemoveShortsSectionsOnSubscriptions"
-            />
-            Also Remove on Subscriptions page
+            <input type="checkbox" id="toggleSectionsOnSubscriptions" />
+            <span></span>
         </label>
         <label>
             <input type="checkbox" id="toggleRemoveShortsButton" />
-            Remove Shorts Button
+            <span></span>
         </label>
         <label>
             <input type="checkbox" id="toggleRedirectShorts" />
-            Redirect Shorts As Normal Video
+            <span></span>
         </label>
-        <p class="silent">to apply changes simply refresh the page</p>
+        <p id="hint" class="silent"></p>
         <script src="popup.js"></script>
     </body>
 </html>

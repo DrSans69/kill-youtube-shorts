@@ -2,27 +2,25 @@ function changeRemoveShortsSectionsOnSubscriptionsState() {
     const toggleRemoveShortsSections = document.getElementById(
         "toggleRemoveShortsSections"
     );
-    const toggleRemoveShortsSectionsOnSubscriptions = document.getElementById(
-        "toggleRemoveShortsSectionsOnSubscriptions"
+    const toggleSectionsOnSubscriptions = document.getElementById(
+        "toggleSectionsOnSubscriptions"
     );
     if (toggleRemoveShortsSections.checked) {
-        toggleRemoveShortsSectionsOnSubscriptions.removeAttribute("disabled");
+        toggleSectionsOnSubscriptions.removeAttribute("disabled");
     } else {
-        toggleRemoveShortsSectionsOnSubscriptions.setAttribute(
-            "disabled",
-            "disabled"
-        );
+        toggleSectionsOnSubscriptions.setAttribute("disabled", "disabled");
     }
 }
 
 // ! in Future better to iterate through all options
 
 document.addEventListener("DOMContentLoaded", () => {
+    const title = document.getElementById("title");
     const toggleRemoveShortsSections = document.getElementById(
         "toggleRemoveShortsSections"
     );
-    const toggleRemoveShortsSectionsOnSubscriptions = document.getElementById(
-        "toggleRemoveShortsSectionsOnSubscriptions"
+    const toggleSectionsOnSubscriptions = document.getElementById(
+        "toggleSectionsOnSubscriptions"
     );
     const toggleRemoveShortsButton = document.getElementById(
         "toggleRemoveShortsButton"
@@ -30,18 +28,24 @@ document.addEventListener("DOMContentLoaded", () => {
     const toggleRedirectShorts = document.getElementById(
         "toggleRedirectShorts"
     );
+    const hint = document.getElementById("hint");
+
+    title.textContent = chrome.i18n.getMessage("popupTitle");
+    toggleRemoveShortsSections.nextElementSibling.textContent =
+        chrome.i18n.getMessage("toggleRemoveShortsSections");
+    toggleSectionsOnSubscriptions.nextElementSibling.textContent =
+        chrome.i18n.getMessage("toggleSectionsOnSubscriptions");
+    toggleRemoveShortsButton.nextElementSibling.textContent =
+        chrome.i18n.getMessage("toggleRemoveShortsButton");
+    toggleRedirectShorts.nextElementSibling.textContent =
+        chrome.i18n.getMessage("toggleRedirectShorts");
+    hint.textContent = chrome.i18n.getMessage("hint");
 
     chrome.storage.sync.get(
-        [
-            "shortsSections",
-            "shortsSectionsOnSubscriptions",
-            "shortsButton",
-            "redirectShorts",
-        ],
+        ["shortsSections", "sectionsSubs", "shortsButton", "redirectShorts"],
         (result) => {
             toggleRemoveShortsSections.checked = result.shortsSections ?? true;
-            toggleRemoveShortsSectionsOnSubscriptions.checked =
-                result.shortsSectionsOnSubscriptions ?? true;
+            toggleSectionsOnSubscriptions.checked = result.sectionsSubs ?? true;
             toggleRemoveShortsButton.checked = result.shortsButton ?? true;
             toggleRedirectShorts.checked = result.redirectShorts ?? true;
 
@@ -54,14 +58,9 @@ document.addEventListener("DOMContentLoaded", () => {
         changeRemoveShortsSectionsOnSubscriptionsState();
     });
 
-    toggleRemoveShortsSectionsOnSubscriptions.addEventListener(
-        "change",
-        (event) => {
-            chrome.storage.sync.set({
-                shortsSectionsOnSubscriptions: event.target.checked,
-            });
-        }
-    );
+    toggleSectionsOnSubscriptions.addEventListener("change", (event) => {
+        chrome.storage.sync.set({ sectionsSubs: event.target.checked });
+    });
 
     toggleRemoveShortsButton.addEventListener("change", (event) => {
         chrome.storage.sync.set({ shortsButton: event.target.checked });

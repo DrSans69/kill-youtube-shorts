@@ -1,6 +1,7 @@
 body {
-    width: 25em;
+    /* width: 30em; */
     /* height: 20em; */
+    white-space: nowrap;
     font-size: 1em;
     font-family: Menlo, monospace;
     padding: 1.5em 1em;

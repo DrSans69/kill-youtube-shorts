@@ -1,0 +1,30 @@
+{
+    "extName": {
+        "message": "Знищити Youtube Shorts",
+        "description": "Імʼя розширення."
+    },
+    "popupTitle": {
+        "message": "Знищити Shorts!",
+        "description": ""
+    },
+    "toggleRemoveShortsSections": {
+        "message": "Прибрати Секцію Shorts",
+        "description": ""
+    },
+    "toggleSectionsOnSubscriptions": {
+        "message": "Також Прибрати В Підписках",
+        "desctiption": ""
+    },
+    "toggleRemoveShortsButton": {
+        "message": "Прибрати Кнопку Shorts",
+        "desctiption": ""
+    },
+    "toggleRedirectShorts": {
+        "message": "Показувати Shorts Як Звичайні Відео",
+        "desctiption": ""
+    },
+    "hint": {
+        "message": "щоб застосувати зміни, просто перезагрузіть сторінку",
+        "description": ""
+    }
+}
