@@ -11,22 +11,19 @@ function removeShortsSectionsNoSubscriptions() {
     }
 }
 
-chrome.storage.sync.get(
-    ["shortsSections", "shortsSectionsOnSubscriptions"],
-    (result) => {
-        if (!result.shortsSections) return;
+chrome.storage.sync.get(["shortsSections", "sectionsSubs"], (result) => {
+    if (!result.shortsSections) return;
 
-        const removeShortsSections = result.shortsSectionsOnSubscriptions
-            ? removeShortsSectionsAll
-            : removeShortsSectionsNoSubscriptions;
+    const removeShortsSections = result.sectionsSubs
+        ? removeShortsSectionsAll
+        : removeShortsSectionsNoSubscriptions;
 
+    removeShortsSections();
+
+    const observer = new MutationObserver(() => {
         removeShortsSections();
+    });
 
-        const observer = new MutationObserver(() => {
-            removeShortsSections();
-        });
-
-        const config = { childList: true, subtree: true };
-        observer.observe(document.body, config);
-    }
-);
+    const config = { childList: true, subtree: true };
+    observer.observe(document.body, config);
+});
