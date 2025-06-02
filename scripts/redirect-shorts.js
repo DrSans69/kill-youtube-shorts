@@ -1,4 +1,6 @@
 function isShorts(url) {
+    const shortsPattern =
+        /https:\/\/www\.youtube\.com\/shorts\/([a-zA-Z0-9_-]+)/;
     return url.match(shortsPattern);
 }
 
