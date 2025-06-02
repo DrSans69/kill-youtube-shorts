@@ -45,28 +45,32 @@ function removeShortsSectionsFromRelated() {
     removeShortsSectionsByTag();
 }
 
+chrome.storage.sync.get(["sectionsRelated"], (result) => {
+    if (!result.sectionsRelated) return;
+
+    removeShortsSectionsFromRelated();
+
+    const observer = new MutationObserver(() => {
+        removeShortsSectionsFromRelated();
+    });
+
+    const config = { childList: true, subtree: true };
+    observer.observe(document.body, config);
+});
+
 function removeShortsSectionsFromResults() {
     if (!location.href.includes("/results")) return;
 
     removeShortsSectionsByTag();
 }
 
-chrome.storage.sync.get(["sectionsRelated", "sectionsResults"], (result) => {
-    if (!result.sectionsRelated && !result.sectionsResults) return;
+chrome.storage.sync.get(["sectionsResults"], (result) => {
+    if (!result.sectionsResults) return;
 
-    let removeShortsSections;
-    if (result.sectionsRelated && result.sectionsResults) {
-        removeShortsSections = removeShortsSectionsByTag;
-    } else if (result.sectionsRelated) {
-        removeShortsSections = removeShortsSectionsFromRelated;
-    } else if (result.sectionsResults) {
-        removeShortsSections = removeShortsSectionsFromResults;
-    }
-
-    removeShortsSections();
+    removeShortsSectionsFromResults();
 
     const observer = new MutationObserver(() => {
-        removeShortsSections();
+        removeShortsSectionsFromResults();
     });
 
     const config = { childList: true, subtree: true };
