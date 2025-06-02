@@ -5,20 +5,22 @@ body {
     font-size: 1em;
     font-family: Menlo, monospace;
     padding: 1.5em 1em;
-    background-color: #1E1D1E ;
+    background-color: #1E1D1E;
     color: #FFFFFF;
 }
+
 h2 {
     margin: 0 0 0.5em 0;
     color: #E0383E;
     text-indent: 10px;
-
 }
+
 p.silent {
     font-size: 0.7em;
     color: #bcb0b1;
     text-indent: 10px;
 }
+
 label {
     display: block;
     margin-bottom: 10px;

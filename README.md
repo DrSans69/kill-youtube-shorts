@@ -14,4 +14,4 @@ You can automatically enable or disable certain functions.
 
 ## Contact
 
-If you have any issues or improvement ideas, feel free to contact me, or fork the repository and make a pull request.
+If you have any issues or improvement ideas, feel free to contact me, or fork the repository.
