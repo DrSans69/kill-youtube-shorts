@@ -27,6 +27,18 @@ document.addEventListener("DOMContentLoaded", () => {
             default: false,
         },
         {
+            id: "toggleSectionsOnRelated",
+            message: "toggleSectionsOnRelated",
+            storageKey: "sectionsRelated",
+            default: false,
+        },
+        {
+            id: "toggleSectionsOnResults",
+            message: "toggleSectionsOnResults",
+            storageKey: "sectionsResults",
+            default: false,
+        },
+        {
             id: "toggleRemoveShortsButton",
             message: "toggleRemoveShortsButton",
             storageKey: "shortsButton",

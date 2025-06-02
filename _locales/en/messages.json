@@ -15,6 +15,14 @@
         "message": "Also Remove on Subscriptions page",
         "desctiption": ""
     },
+    "toggleSectionsOnRelated": {
+        "message": "Remove Shorts From Related",
+        "desctiption": ""
+    },
+    "toggleSectionsOnResults": {
+        "message": "Remove Shorts From Search",
+        "desctiption": ""
+    },
     "toggleRemoveShortsButton": {
         "message": "Remove Shorts Button",
         "desctiption": ""
