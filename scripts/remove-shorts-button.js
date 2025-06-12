@@ -1,5 +1,5 @@
 function removeShortsButton() {
-    const shortsLink = document.querySelector('a[title="YouTube Shorts"]');
+    const shortsLink = document.querySelector('a[title$="Shorts"]');
     if (shortsLink && shortsLink.parentElement) {
         shortsLink.parentElement.remove();
     }
