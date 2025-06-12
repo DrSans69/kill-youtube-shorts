@@ -15,6 +15,14 @@
         "message": "Також Прибрати В Підписках",
         "desctiption": ""
     },
+    "toggleSectionsOnRelated": {
+        "message": "Прибрати зі Схожих",
+        "desctiption": ""
+    },
+    "toggleSectionsOnResults": {
+        "message": "Прибрати з Пошуку",
+        "desctiption": ""
+    },
     "toggleRemoveShortsButton": {
         "message": "Прибрати Кнопку Shorts",
         "desctiption": ""
